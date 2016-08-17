@@ -26,3 +26,5 @@ js模块加载：seaJs
 1.5天  攻克技术难点
 
 预计完成时间： 1周    
+
+https://github.com/AsiaX/helloSMD.git
