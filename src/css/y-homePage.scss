@@ -1,7 +1,7 @@
 @import "reset.css";
 @import "mobile";
 @import "y-comm";
-
+@import "../iconfont/iconfont.css";
 html,body{
 	height: 100%;
 	width: 100%;
@@ -30,9 +30,35 @@ header{
 		background: url("../img/y-logo.png") no-repeat 0 0;
 		background-size: cover;
 	}
+	.msg{
+		display: block;
+		position: absolute;
+		left: pxToRem(26);
+		bottom: pxToRem(20);
+		font-size: pxToRem(40);
+		color: #fff;
+	}
 }
 section{
 	@include box_flex(1);
+	.swiper-container{
+		height: pxToRem(410);
+		width: 100%;
+	}
+	.text{
+		width: 100%;
+		height: pxToRem(248);
+		line-height: pxToRem(248);
+		text-align: center;
+		color: #fc5885;
+		font-size: pxToRem(28);
+		span{
+			display: block;
+			font-size: pxToRem(24);
+			margin: 0 pxToRem(24);
+			color: #ff84a5;
+		}
+	}
 }
 footer{
 	@include box_flex(1);
