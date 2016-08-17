@@ -40,13 +40,24 @@ gulp.task('copy-js',function(){
 	.pipe(gulp.dest("app/prd/js"));
 })
 
+//拷贝iconfont
+var iconfontfiles = ['src/iconfont/**/*'];
+gulp.task('copy-iconfont',function(){
+	gulp.src(iconfontfiles)
+	.pipe(gulp.dest("app/prd/iconfont"));
+})
+
+
+//启动监听
 gulp.task('watch',function(){
 	gulp.watch(htmlfiles,['copy-html']);
 	gulp.watch(sassfiles,['copy-sass']);
 	gulp.watch(imageflies,['copy-img']);
 	gulp.watch(jsfiles,['copy-js']);
+	gulp.watch(iconfontfiles,['copy-iconfont']);
 })
 
+//服务
 gulp.task('server',function(){
 	gulp.src("./")
 	.pipe(webserver({
@@ -60,6 +71,6 @@ gulp.task('server',function(){
 	}))
 })
 
-gulp.task("copy-all",['copy-html','copy-img','copy-sass'])
+gulp.task("copy-all",['copy-html','copy-img','copy-sass','copy-js','copy-iconfont'])
 
 gulp.task('default',['copy-all','watch','server']);
