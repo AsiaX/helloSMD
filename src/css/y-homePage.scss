@@ -1,0 +1,42 @@
+@import "reset.css";
+@import "mobile";
+@import "y-comm";
+
+html,body{
+	height: 100%;
+	width: 100%;
+
+}
+body{
+	@include box();
+	@include box_orient(vertical);
+}
+header{
+	position: relative;
+	@include box_flex(1);
+	@include box_flex_group(2);
+	height: pxToRem(96);
+	width: 100%;
+	background: #ad0006;
+	text-align: center;
+
+	h1{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		width: pxToRem(180);
+		height: pxToRem(60);
+		background: url("../img/y-logo.png") no-repeat 0 0;
+		background-size: cover;
+	}
+}
+section{
+	@include box_flex(1);
+}
+footer{
+	@include box_flex(1);
+	@include box_flex_group(2);
+	height: pxToRem(100);
+	width: 100%;
+}
