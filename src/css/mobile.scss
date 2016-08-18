@@ -1,19 +1,7 @@
 $yh:"Microsoft yahei";
-@function pxToRem($px, $base: 24) {
+@function pxToRem($px, $base：24) {
   @return ($px / $base) * 1rem;
 }
-
-// .mydiv{
-//     width:240px;
-//     width:10rem;
-//     width:pxToRem(240);
-// }
-
-
-// @function pxToRem($px, $base: 24){
-//     @return ($px/$base) * 1rem;
-// }
-
 
 
 html {
