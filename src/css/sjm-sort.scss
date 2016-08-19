@@ -1,0 +1,45 @@
+@import "mobile";
+@import '../iconfont/iconfont.css';
+body,html{
+    width:100%;
+    height:100%;
+    background:#f3eff0;
+}
+
+@mixin box ($box-sizing) {
+    -webkit-box-sizing:$box-sizing;
+    -moz-box-sizing:$box-sizing;
+    -ms-box-sizing:$box-sizing;
+    -o-box-sizing:$box-sizing;
+    box-sizing:$box-sizing;
+}
+
+header{
+    width:100%;
+    height:pxToRem(88);
+    background:#ab0006;
+    border-bottom: #db909a;
+    text-align:center;
+    line-height:pxToRem(88);
+    img{
+        display: inline-block;
+        height:pxToRem(60);
+        width: pxToRem(179);
+        margin:pxToRem(14) auto;
+    }
+    .iconfont{
+        font-size: pxToRem(40);
+        color: #fff;
+        
+    }
+    .icon-xiaoxi{
+        float:left;
+        margin-left:pxToRem(27);
+    }
+    .icon-gouwuche{
+        float: right;
+        margin-right:pxToRem(27);
+    }
+}
+
+

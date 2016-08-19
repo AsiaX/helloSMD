@@ -1,5 +1,5 @@
 $yh:"Microsoft yahei";
-@function pxToRem($px, $base：24) {
+@function pxToRem($px, $base:24) {
   @return ($px / $base) * 1rem;
 }
 
