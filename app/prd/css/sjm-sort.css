@@ -148,3 +148,7 @@ header {
   header .icon-gouwuche {
     float: right;
     margin-right: 1.125rem; }
+
+section .sousuo {
+  height: 3.16667rem;
+  padding: 0.41667rem 0.66667rem; }
