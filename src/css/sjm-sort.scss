@@ -1,51 +1,201 @@
-@import "mobile";
+@import "sjm-mobile";
 @import '../iconfont/iconfont.css';
-body,html{
-    width:100%;
-    height:100%;
-    background:#f3eff0;
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2;
 }
-
 @mixin box ($box-sizing) {
-    -webkit-box-sizing:$box-sizing;
-    -moz-box-sizing:$box-sizing;
-    -ms-box-sizing:$box-sizing;
-    -o-box-sizing:$box-sizing;
-    box-sizing:$box-sizing;
+    -webkit-box-sizing: $box-sizing;
+    -moz-box-sizing: $box-sizing;
+    -ms-box-sizing: $box-sizing;
+    -o-box-sizing: $box-sizing;
+    box-sizing: $box-sizing;
 }
-
-header{
-    width:100%;
-    height:pxToRem(88);
-    background:#ab0006;
+//body{
+//  display: -webkit-box;
+//  -webkit-box-orient:vertical ;
+//}
+header {
+    width: 100%;
+    height: pxToRem(88);
+    background: #ab0006;
     border-bottom: #db909a;
-    text-align:center;
-    line-height:pxToRem(88);
-    img{
+    text-align: center;
+    line-height: pxToRem(88);
+//  -webkit-box-flex: 1;
+//  -webkit-box-flex-group: 1;
+    img {
         display: inline-block;
-        height:pxToRem(60);
+        height: pxToRem(60);
         width: pxToRem(179);
-        margin:pxToRem(14) auto;
+        margin: pxToRem(14) auto;
     }
-    .iconfont{
+    .head-icon {
         font-size: pxToRem(40);
         color: #fff;
-        
     }
-    .icon-xiaoxi{
-        float:left;
-        margin-left:pxToRem(27);
+    .icon-xiaoxi {
+        float: left;
+        margin-left: pxToRem(27);
     }
-    .icon-gouwuche{
+    .icon-gouwuche {
         float: right;
-        margin-right:pxToRem(27);
+        margin-right: pxToRem(27);
     }
 }
-section{
-    .sousuo{
-        height:pxToRem(76);
-        padding:pxToRem(10) pxToRem(16);
+//滑动区域
+section {
+    width: 100%;
+    height: pxToRem(27);
+//  -webkit-box-flex-group: 2;
+    .sousuo-wrap {
+        width: 100%; //      background: #f2f2f2;
+        height: pxToRem(76);
+        padding: pxToRem(10) pxToRem(16);
+        @include box(border-box);
+        display: -webkit-box;
+        border-bottom: 1px solid #d9d9d9;
+        .sousuo-inner {
+            height: pxToRem(56); //          line-height:pxToRem(56);
+            background: #fff;
+            border-radius: 3px/4px;
+            -webkit-box-flex: 1;
+            -webkit-box-flex-group: 1;
+            padding: pxToRem(14) pxToRem(16);
+            @include box(border-box);
+            display: -webkit-box;
+            span {
+                display: block;
+                width: pxToRem(36);
+                height: pxToRem(28);
+                line-height: pxToRem(28);
+                -webkit-box-flex-group: 2;
+                font-size: pxToRem(26);
+                color: #e06464; 
+            }
+            input {
+                display: block;
+                -webkit-box-flex: 1;
+                -webkit-box-flex-group: 1;
+                height: pxToRem(28);
+                border: none;
+                font-size: pxToRem(20);
+            }
+        }
+        .brand {
+            width: pxToRem(110);
+            height: pxToRem(56);
+            -webkit-box-flex-group: 2;
+            margin-left: pxToRem(12);
+            line-height: pxToRem(56);
+            background: #fff;
+            border-radius: 3px/4px;
+            border: 1px solid #ff5b82;
+            color: #ff5b82;
+            text-align: center;
+            @include box(border-box);
+            font-size: pxToRem(20);
+        }
+    }
+    .new {
+        width: 100%;
+        height: pxToRem(262);
+        background: #fff;
+        border-bottom:2px solid #e1e1e1;
+        padding: pxToRem(0) pxToRem(20);
+        @include box(border-box);
+        .text {
+            height: pxToRem(65);
+            font-size: pxToRem(22);
+            padding: pxToRem(24) pxToRem(0) pxToRem(17);
+            @include box(border-box);
+            img {
+                display: block;
+                width: pxToRem(357);
+                height: pxToRem(23);
+            }
+        }
+        .sjm-new-wrap {
+            display: -webkit-box;
+            
+            .sjm-new {
+                -webkit-box-flex: 1;
+                display: block;
+                height: pxToRem(168); 
+                img {
+                    display: block;
+                    width: 100%;
+                    height: pxToRem(168);
+                }
+                
+            }
+            .first {
+                margin-right: pxToRem(12);
+            }
+        }
+    }
+    .recommend{
+        background: #fff;
+        margin-top: pxToRem(16);
+        border-top: 1px solid #dadada;
+        width: 100%;
+        border-bottom:2px solid #e1e1e1;
+        padding: pxToRem(0) pxToRem(20);
+        @include box(border-box);
+        .text {
+            height: pxToRem(65);
+            font-size: pxToRem(22);
+            padding: pxToRem(24) pxToRem(0) pxToRem(17);
+            @include box(border-box);
+            img {
+                display: block;
+                width: pxToRem(398);
+                height: pxToRem(22);
+            }
+        }
+        .recommend-wrap{
+            background: #fff;
+//          width: pxToRem(600);
+            margin:0 auto;
+//          height:100%;
+            overflow: hidden;
+            .sjm-rec{
+                width: pxToRem(162);
+                margin:pxToRem(19);
+                float: left;
+                img{
+                    display: block;
+                    border-radius:pxToRem(162) ;
+                    width: pxToRem(162);
+                    height: pxToRem(162);
+                }
+                .top{
+                    margin-top: pxToRem(16);
+                    line-height:pxToRem(30) ;
+                    width: 100%;
+                    color: #5b5858;
+                    font-size: pxToRem(22);
+                    text-align: center;
+                }
+                .bottom{
+                    width: 100%;
+                     line-height:pxToRem(30) ;
+                    color:#b5b5b5;
+                    font-size: pxToRem(18);
+                    text-align: center;
+                }
+                
+            }
+        }
     }
 }
-
-
+footer{
+    width: 100%;
+    height: pxToRem(90);
+    position: fixed;
+    bottom: 0;
+//  -webkit-box-flex-group: 1;
+    background: #DB909A;
+}
