@@ -1,5 +1,6 @@
 @import "sjm-mobile";
 @import '../iconfont/iconfont.css';
+@import '../sjm-iconfont/iconfont.css';
 body,
 html {
     width: 100%;
@@ -70,9 +71,9 @@ section {
                 display: block;
                 width: pxToRem(36);
                 height: pxToRem(28);
-                line-height: pxToRem(28);
+                line-height: pxToRem(22);
                 -webkit-box-flex-group: 2;
-                font-size: pxToRem(26);
+                font-size: pxToRem(36);
                 color: #e06464; 
             }
             input {
@@ -81,7 +82,7 @@ section {
                 -webkit-box-flex-group: 1;
                 height: pxToRem(28);
                 border: none;
-                font-size: pxToRem(20);
+                font-size: pxToRem(22);
             }
         }
         .brand {
@@ -89,14 +90,18 @@ section {
             height: pxToRem(56);
             -webkit-box-flex-group: 2;
             margin-left: pxToRem(12);
-            line-height: pxToRem(56);
+            line-height: pxToRem(50);
             background: #fff;
             border-radius: 3px/4px;
             border: 1px solid #ff5b82;
             color: #ff5b82;
             text-align: center;
             @include box(border-box);
-            font-size: pxToRem(20);
+            font-size: pxToRem(22);
+            font-family:$yh;
+            span:first-child{
+                font-size: pxToRem(30);
+            }
         }
     }
     .new {
@@ -190,6 +195,76 @@ section {
             }
         }
     }
+    .hot{
+        background: #fff;
+        margin-top: pxToRem(16);
+        border-top: 1px solid #dadada;
+        width: 100%;
+        border-bottom:2px solid #e1e1e1;
+        padding: pxToRem(0) pxToRem(20);
+        @include box(border-box);
+        .text {
+            height: pxToRem(65);
+            font-size: pxToRem(22);
+            padding: pxToRem(24) pxToRem(0) pxToRem(17);
+            @include box(border-box);
+            img {
+                display: block;
+                width: pxToRem(328);
+                height: pxToRem(24);
+            }
+        }
+        #wrapper{
+            width: 100%;
+            height:pxToRem(166);
+            overflow: hidden;
+       
+            ul{
+//              overflow: hidden;
+                position: relative;
+                img{
+                     display: block;
+                     width: pxToRem(183);  
+                     height: pxToRem(137);  
+                      
+                    }
+                li:nth-child(1){
+                    position: absolute;
+                    display: block;
+                    left: pxToRem(0);
+                    
+                }
+                li:nth-child(2){
+                    position: absolute;
+                    display: block;
+                    left: pxToRem(190);
+                }
+                li:nth-child(3){
+                    position: absolute;
+                    display: block;
+                    left: pxToRem(380);
+                    
+                }
+                li:nth-child(4){
+                    position: absolute;
+                    display: block;
+                    left: pxToRem(570);
+                }
+                li:nth-child(5){
+                    position: absolute;
+                    display: block;
+                    left: pxToRem(760);
+                    
+                }
+                li:nth-child(6){
+                    position: absolute;
+                    display: block;
+                    left: pxToRem(950);
+                }
+            }  
+        }      
+    }
+    
 }
 footer{
     width: 100%;

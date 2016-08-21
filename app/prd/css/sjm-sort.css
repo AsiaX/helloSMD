@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url(../iconfont/iconfont.css);
+@import url(../sjm-iconfont/iconfont.css);
 html {
   font-size: 62.5%;
   font-family: "Microsoft yahei"; }
@@ -155,11 +156,6 @@ header {
     float: right;
     margin-right: 1.125rem; }
 
-<<<<<<< HEAD
-section .sousuo {
-  height: 3.16667rem;
-  padding: 0.41667rem 0.66667rem; }
-=======
 section {
   width: 100%;
   height: 1.125rem; }
@@ -191,9 +187,9 @@ section {
         display: block;
         width: 1.5rem;
         height: 1.16667rem;
-        line-height: 1.16667rem;
+        line-height: 0.91667rem;
         -webkit-box-flex-group: 2;
-        font-size: 1.08333rem;
+        font-size: 1.5rem;
         color: #e06464; }
       section .sousuo-wrap .sousuo-inner input {
         display: block;
@@ -201,13 +197,13 @@ section {
         -webkit-box-flex-group: 1;
         height: 1.16667rem;
         border: none;
-        font-size: 0.83333rem; }
+        font-size: 0.91667rem; }
     section .sousuo-wrap .brand {
       width: 4.58333rem;
       height: 2.33333rem;
       -webkit-box-flex-group: 2;
       margin-left: 0.5rem;
-      line-height: 2.33333rem;
+      line-height: 2.08333rem;
       background: #fff;
       border-radius: 3px/4px;
       border: 1px solid #ff5b82;
@@ -218,7 +214,10 @@ section {
       -ms-box-sizing: border-box;
       -o-box-sizing: border-box;
       box-sizing: border-box;
-      font-size: 0.83333rem; }
+      font-size: 0.91667rem;
+      font-family: "Microsoft yahei"; }
+      section .sousuo-wrap .brand span:first-child {
+        font-size: 1.25rem; }
   section .new {
     width: 100%;
     height: 10.91667rem;
@@ -306,6 +305,65 @@ section {
           color: #b5b5b5;
           font-size: 0.75rem;
           text-align: center; }
+  section .hot {
+    background: #fff;
+    margin-top: 0.66667rem;
+    border-top: 1px solid #dadada;
+    width: 100%;
+    border-bottom: 2px solid #e1e1e1;
+    padding: 0rem 0.83333rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box; }
+    section .hot .text {
+      height: 2.70833rem;
+      font-size: 0.91667rem;
+      padding: 1rem 0rem 0.70833rem;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box; }
+      section .hot .text img {
+        display: block;
+        width: 13.66667rem;
+        height: 1rem; }
+    section .hot #wrapper {
+      width: 100%;
+      height: 6.91667rem;
+      overflow: hidden; }
+      section .hot #wrapper ul {
+        position: relative; }
+        section .hot #wrapper ul img {
+          display: block;
+          width: 7.625rem;
+          height: 5.70833rem; }
+        section .hot #wrapper ul li:nth-child(1) {
+          position: absolute;
+          display: block;
+          left: 0rem; }
+        section .hot #wrapper ul li:nth-child(2) {
+          position: absolute;
+          display: block;
+          left: 7.91667rem; }
+        section .hot #wrapper ul li:nth-child(3) {
+          position: absolute;
+          display: block;
+          left: 15.83333rem; }
+        section .hot #wrapper ul li:nth-child(4) {
+          position: absolute;
+          display: block;
+          left: 23.75rem; }
+        section .hot #wrapper ul li:nth-child(5) {
+          position: absolute;
+          display: block;
+          left: 31.66667rem; }
+        section .hot #wrapper ul li:nth-child(6) {
+          position: absolute;
+          display: block;
+          left: 39.58333rem; }
 
 footer {
   width: 100%;
@@ -313,4 +371,3 @@ footer {
   position: fixed;
   bottom: 0;
   background: #DB909A; }
->>>>>>> 4eb4385a4923f704a5af6dbf1b73f93a5c0401b7
