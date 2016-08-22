@@ -82,7 +82,7 @@
 				<p class="text">
 					<img src="../img/sjm-hot.png" alt="" />
 				</p>
-				<div id="wrapper">
+				<!--<div id="wrapper">
 			        <ul>
 			            <li><img src="../img/sjm-new.png"/><p>女神款衬衫</p></li>
 			            <li><img src="../img/sjm-new.png"/><p>女神款衬衫</p></li>
@@ -91,27 +91,49 @@
 			            <li><img src="../img/sjm-new.png"/><p>女神款衬衫</p></li>
 			            <li><img src="../img/sjm-new.png"/><p>女神款衬衫</p></li>
 			        </ul>
-			    </div>
+			    </div>-->
+			    <div class="swiper-container container">
+					<div class="swiper-wrapper wrapper">
+					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫ssfdsfd</span></div>
+					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫</span></div>
+					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫</span></div>
+					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫</span></div>
+					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫</span></div>
+					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫dfffg</span></div>
+				  	</div>
+				</div>
 			</div>
-			<div class="hot">
+			<div class="girl">
 				<p class="text">
-					<img src="../img/sjm-hot.png" alt="" />
+					<img src="../img/sjm-girl.png" alt="" />
 				</p>
-				<div id="wrapper">
-			    </div>
+				<ul class="list">
+					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
+					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
+					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
+					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
+					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
+					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
+					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
+					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
+
+				</ul>
 			</div>
 			
 		</section>
-		<footer>111</footer>
+		<!--<footer>111</footer>-->
+		<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var myswiper = new Swiper('.container',{
+				freeMode : true,
+				freeModeMomentum : false,
+				slidesPerView : 'auto',
+				resistanceRatio:0,
+			})
+	
+		</script>
+
 	</body>
-	<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../js/iscroll.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		var myscroll=new IScroll('.wrapper',{
-			
-			eventPassthrough:true,
-		});
-		alert(1);
-	</script>
 
 </html>

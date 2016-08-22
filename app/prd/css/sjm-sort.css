@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url(../iconfont/iconfont.css);
 @import url(../sjm-iconfont/iconfont.css);
+@import url(swiper-3.3.1.min.css);
 html {
   font-size: 62.5%;
   font-family: "Microsoft yahei"; }
@@ -330,44 +331,64 @@ section {
         display: block;
         width: 13.66667rem;
         height: 1rem; }
-    section .hot #wrapper {
+    section .hot .container {
       width: 100%;
-      height: 6.91667rem;
-      overflow: hidden; }
-      section .hot #wrapper ul {
+      height: 6.91667rem; }
+      section .hot .container .swiper-wrapper .swiper-slide {
+        margin-right: 0.20833rem;
+        display: inline-block;
+        width: 7.625rem;
+        height: 5.70833rem;
         position: relative; }
-        section .hot #wrapper ul img {
+        section .hot .container .swiper-wrapper .swiper-slide img {
           display: block;
           width: 7.625rem;
           height: 5.70833rem; }
-        section .hot #wrapper ul li:nth-child(1) {
+        section .hot .container .swiper-wrapper .swiper-slide span {
+          display: inline-block;
+          background: rgba(0, 0, 0, 0.4);
+          color: #fff;
+          padding: 0.20833rem 0.41667rem;
+          line-height: 1.41667rem;
+          font-size: 0.91667rem;
           position: absolute;
-          display: block;
-          left: 0rem; }
-        section .hot #wrapper ul li:nth-child(2) {
-          position: absolute;
-          display: block;
-          left: 7.91667rem; }
-        section .hot #wrapper ul li:nth-child(3) {
-          position: absolute;
-          display: block;
-          left: 15.83333rem; }
-        section .hot #wrapper ul li:nth-child(4) {
-          position: absolute;
-          display: block;
-          left: 23.75rem; }
-        section .hot #wrapper ul li:nth-child(5) {
-          position: absolute;
-          display: block;
-          left: 31.66667rem; }
-        section .hot #wrapper ul li:nth-child(6) {
-          position: absolute;
-          display: block;
-          left: 39.58333rem; }
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+  section .girl {
+    background: #fff;
+    margin-top: 0.66667rem;
+    border-top: 1px solid #dadada;
+    width: 100%;
+    border-bottom: 2px solid #e1e1e1;
+    padding: 0rem 0.83333rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden; }
+    section .girl .text {
+      height: 2.70833rem;
+      font-size: 0.91667rem;
+      padding: 1rem 0rem 0.70833rem;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box; }
+      section .girl .text img {
+        display: block;
+        width: 9.625rem;
+        height: 0.95833rem; }
+    section .girl .list li {
+      height: 8.25rem;
+      float: left; }
 
 footer {
   width: 100%;
   height: 3.75rem;
   position: fixed;
   bottom: 0;
-  background: #DB909A; }
+  background: #DB909A;
+  z-index: 100; }
