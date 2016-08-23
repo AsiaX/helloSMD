@@ -1,5 +1,4 @@
 require('./zepto.min');
-require('./zepto-tap');
 
 getTextFromUrl();
 function getTextFromUrl(){
@@ -29,7 +28,9 @@ function getSelectData(selectInp){
 	$.ajax({
 		url:'http://datainfo.duapp.com/shopdata/selectGoodes.php',
 		type:'get',
-		data:params,
+		data: {
+				classID: idName
+			},
 		dataType:"jsonp",
 		success:function(data){
 			console.log(data);

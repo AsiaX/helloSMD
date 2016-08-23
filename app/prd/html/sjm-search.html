@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>商品搜索</title>
-	<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="../css/sjm-search.css">
-</head>
-<body>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商品搜索</title>
+		<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="../css/sjm-search.css">
+	</head>
+
+	<body>
 		<header>
 			<span class="iconfont icon-xiaoxi head-icon"></span>
 			<img src="../img/y-logo.png" />
@@ -18,17 +20,17 @@
 				<div class="sousuo-inner">
 
 					<span class="iconfont icon-fangdajing"></span>
-					<input type="text" placeholder="请输入商品名称或品牌名称" />
+					<input type="text" placeholder="请输入商品名称或品牌名称" class="ipt" />
 				</div>
-				<div class="brand">
+				<div class="brand" id="search">
 					<span class="iconfont icon-fenlei"></span>
 					<span>搜索</span>
 				</div>
 			</div>
-		</section>
-	<div class="searchDataBox">
-		<ul id="thelist">
-			<!-- <li>
+
+			<!--<div class="searchDataBox">-->
+				<!--<ul id="thelist">-->
+					<!-- <li>
 				<dl>
 					<dt>
 						<img src="http://s18.mogucdn.com/p1/151021/11gcxq_ie4tqojzmvsgezrvgqzdambqgqyde_640x960.jpg_220x330.webp">
@@ -46,9 +48,99 @@
 					</dd>
 				</dl>
 			</li> -->
-		</ul>
-		<p class="noGoods"></p>
-	</div>
-	<script type="text/javascript" src="../js/sousuo.js"></script>
-</body>
+				<!--</ul>-->
+				<!--<p class="noGoods"></p>-->
+			<!--</div>-->
+			<div id="wrapper">
+				<ul class="list_goods">
+
+				</ul>
+				<p class="noGoods"></p>
+			</div>
+
+		</section>
+		<!--<script type="text/javascript" src="../js/sousuo.js"></script>-->
+		<script src="../js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/iscroll.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			getTextFromUrl();
+
+			function getTextFromUrl() {
+				var src = window.location.href;
+				var selectText = src.split('selectText=')[1];
+				selectText = decodeURI(selectText);
+				console.log(selectText);
+				if(selectText == 'undefined' || selectText == "") {
+					console.log(selectText);
+				} else {
+					$('.searchinp').val(selectText);
+					getSelectData(selectText);
+				}
+			}
+
+			$('#search').on('touchstart', function() {
+				var selectInp = $('.ipt').val();
+				if(selectInp) {
+					getSelectData(selectInp);
+				} else {
+					alert('请输入关键字!');
+				}
+			})
+
+			function getSelectData(selectInp) {
+				var params = {
+					selectText: selectInp
+				}
+				$.ajax({
+					url: 'http://datainfo.duapp.com/shopdata/selectGoodes.php',
+					type: 'get',
+					data: params,
+					dataType: "jsonp",
+					success: function(data) {
+						console.log(data);
+						$('#thelist').html(" ");
+						if(data == 0) {
+							$('.noGoods').show().text('没有搜索到相关商品!');
+							return;
+						}
+						if(data.length) {
+//							$.each(data, function(i) {
+//								var oldPrice = parseInt(data[i].price * data[i].discount * 0.1);
+//								var oLi = $("<li><dl><dt><img src=" + data[i].goodsListImg + "></dt><dd><h3>" + data[i].goodsName + "</h3><div><b class='price'>￥" + oldPrice + "</b><span class='oldprice'>￥" + data[i].price + "</span></div><span class='discount'>" + data[i].discount + "折</span><a href='#'></a></dd></dl></li>")
+//								$('#thelist').append(oLi);
+//								$('.noGoods').hide();
+//							});
+//							
+				$.each(data, function(i) {
+					var li = $("<li class='single' id='" + data[i].goodsID + "'></li>");
+					var discount = Math.round(data[i].price * data[i].discount / 10);
+					if(discount == 0) {
+						discount = data[i].price;
+					}
+					var inner = "<a href='javascript:;' class='img_a'><img class='good_img' src='" +
+						data[i].goodsListImg + "' /></a><a href='###' class='text'>" +
+						data[i].goodsName + "</a><span class='price'>￥" +
+						data[i].price + "</span><span class='discount'>￥" + discount + "</span>"
+					li.html(inner);
+					li.appendTo($(".list_goods"));
+					$('.noGoods').hide();
+				})
+				//初始化iscroll
+				var myscr = new IScroll("#wrapper", {
+					
+				})
+				$(".list_goods").on("tap","li",function(){
+					window.location = "detail.html?id="+$(this).prop("id");
+				})
+				
+				
+						} else {
+							$('.noGoods').show().text('没有搜索到相关商品!');
+						}
+					}
+				})
+			}
+		</script>
+	</body>
+
 </html>
