@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/sjm-sort.css" />
+		<script src="../js/sea.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
@@ -20,11 +21,11 @@
 				<div class="sousuo-inner">
 
 					<span class="iconfont icon-fangdajing"></span>
-					<input type="text" placeholder="请输入商品名称或品牌名称" />
+					<input type="text" placeholder="请输入商品名称或品牌名称" class="ipt"/>
 				</div>
-				<div class="brand">
+				<div class="brand" id="search">
 					<span class="iconfont icon-fenlei"></span>
-					<span>品牌</span>
+					<span>搜索</span>
 				</div>
 			</div>
 			<div class="new">
@@ -36,7 +37,7 @@
 						<img src="../img/sjm-new.png" />
 					</div>
 					<div class="sjm-new">
-						<img src="../img/sjm-new.png" />
+						<img src="../img/sjm-top.png" />
 					</div>
 				</div>
 
@@ -45,62 +46,32 @@
 				<p class="text">
 					<img src="../img/sjm-topic.png" alt="" />
 				</p>
-				<div class="recommend-wrap">
-					<div class="sjm-rec">
+				<ul class="recommend-wrap">
+					<li class="sjm-rec">
+						<img src="../img/sjm-rec.png" />
+						<p class="top">玩转女人味</p>
+						<p class="bottom">鞋子配饰</span>
+					</li>
+					<!--<li class="sjm-rec">
 						<img src="../img/sjm-rec.png" />
 						<p class="top">玩转女人味</p>
 						<p class="bottom">高跟鞋</span>
-					</div>
-					<div class="sjm-rec">
-						<img src="../img/sjm-rec.png" />
-						<p class="top">玩转女人味</p>
-						<p class="bottom">高跟鞋</span>
-					</div>
-					<div class="sjm-rec">
-						<img src="../img/sjm-rec.png" />
-						<p class="top">玩转女人味</p>
-						<p class="bottom">高跟鞋</span>
-					</div>
-					<div class="sjm-rec">
-						<img src="../img/sjm-rec.png" />
-						<p class="top">玩转女人味</p>
-						<p class="bottom">高跟鞋</span>
-					</div>
-					<div class="sjm-rec">
-						<img src="../img/sjm-rec.png" />
-						<p class="top">玩转女人味</p>
-						<p class="bottom">高跟鞋</span>
-					</div>
-					<div class="sjm-rec">
-						<img src="../img/sjm-rec.png" />
-						<p class="top">玩转女人味</p>
-						<p class="bottom">高跟鞋</span>
-					</div>
-				</div>
+					</li>-->
+				</ul>
 			</div>
 			<div class="hot">
 				<p class="text">
 					<img src="../img/sjm-hot.png" alt="" />
 				</p>
-				<!--<div id="wrapper">
-			        <ul>
-			            <li><img src="../img/sjm-new.png"/><p>女神款衬衫</p></li>
-			            <li><img src="../img/sjm-new.png"/><p>女神款衬衫</p></li>
-			            <li><img src="../img/sjm-new.png"/><p>女神款衬衫</p></li>
-			            <li><img src="../img/sjm-new.png"/><p>女神款衬衫</p></li>
-			            <li><img src="../img/sjm-new.png"/><p>女神款衬衫</p></li>
-			            <li><img src="../img/sjm-new.png"/><p>女神款衬衫</p></li>
-			        </ul>
-			    </div>-->
-			    <div class="swiper-container container">
+				<div class="swiper-container container">
 					<div class="swiper-wrapper wrapper">
-					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫ssfdsfd</span></div>
-					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫</span></div>
-					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫</span></div>
-					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫</span></div>
-					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫</span></div>
-					    <div class="swiper-slide"><img src="../img/sjm-new.png"/><span>女神款衬衫dfffg</span></div>
-				  	</div>
+						<!--<div class="swiper-slide"><img src="../img/sjm-new.png" /><span>女神款衬衫ssfdsfd</span></div>
+						<div class="swiper-slide"><img src="../img/sjm-new.png" /><span>女神款衬衫</span></div>
+						<div class="swiper-slide"><img src="../img/sjm-new.png" /><span>女神款衬衫</span></div>
+						<div class="swiper-slide"><img src="../img/sjm-new.png" /><span>女神款衬衫</span></div>
+						<div class="swiper-slide"><img src="../img/sjm-new.png" /><span>女神款衬衫</span></div>
+						<div class="swiper-slide"><img src="../img/sjm-new.png" /><span>女神款衬衫dfffg</span></div>-->
+					</div>
 				</div>
 			</div>
 			<div class="girl">
@@ -108,31 +79,95 @@
 					<img src="../img/sjm-girl.png" alt="" />
 				</p>
 				<ul class="list">
-					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
-					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
-					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
-					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
-					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
-					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
-					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
-					<li><img src="../img/sjm-rec.png"/><p>上衣</p></li>
-
+					<!--<li><img src="../img/sjm-rec.png" />
+						<p>上衣</p>
+					</li>
+					<li><img src="../img/sjm-rec.png" />
+						<p>上衣</p>
+					</li>
+					<li><img src="../img/sjm-rec.png" />
+						<p>上衣</p>
+					</li>
+					<li><img src="../img/sjm-rec.png" />
+						<p>上衣</p>
+					</li>
+					<li><img src="../img/sjm-rec.png" />
+						<p>上衣</p>
+					</li>
+					<li><img src="../img/sjm-rec.png" />
+						<p>上衣</p>
+					</li>
+					<li><img src="../img/sjm-rec.png" />
+						<p>上衣</p>
+					</li>
+					<li><img src="../img/sjm-rec.png" />
+						<p>上衣</p>
+					</li>
+-->
 				</ul>
 			</div>
-			
+
 		</section>
-		<!--<footer>111</footer>-->
+		<footer>111</footer>
 		<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			var myswiper = new Swiper('.container',{
-				freeMode : true,
-				freeModeMomentum : false,
-				slidesPerView : 'auto',
-				resistanceRatio:0,
+			// 获取 商品列表信息 
+			getGoodsData();
+
+			function getGoodsData(classID, pageCode, linenumber, slide) {
+				//	var thisClassID = classID?classID:0;
+				//	var thisPageCode = pageCode?pageCode:0;
+				//	var thisSlide = slide?slide:0;
+				//	var thisLineNumber = linenumber?linenumber:6;
+				//	var params = {
+				//		classID:thisClassID,
+				//		pageCode:thisPageCode,
+				//		linenumber:thisLineNumber
+				//	}
+				var arr = ["人气百搭", "简约时尚", '气质正装', '优雅知性', '暖冬必备', '酷黑时尚', '早秋风尚', '甜美色调',"时髦配饰",'阳光暖男']
+				$.ajax({
+					url: 'http://datainfo.duapp.com/shopdata/getGoods.php',
+					type: 'get',
+					//		data:params,
+					dataType: 'jsonp',
+					success: function(data) {
+						console.log(data.length);
+						if(data.length) {
+							for(var i = 0; i <= 4; i++) {
+								var oLi = $("<li class='sjm-rec'><img src='" + data[i].goodsListImg + "'/><p class='top'>" + arr[i] + "</p><p class='bottom'>" + data[i].className + "</p></li>")
+								$('.recommend .recommend-wrap').append(oLi);
+
+							}
+							$.each(data, function(i) {
+								if(i>4){
+									var div0 = "<div class='swiper-slide'><img src='" + data[i].goodsListImg + "' /><span>"+arr[i]+"</span></div>"
+									$(".hot .container .wrapper").append(div0);
+									
+								}
+							});
+							var myswiper = new Swiper('.container', {
+								freeMode: true,
+								freeModeMomentum: false,
+								slidesPerView: 'auto',
+								resistanceRatio: 0,
+							})
+						}
+					}
+				})
+			}
+
+			// 点击 搜索商品 进入搜索详情页面
+			$('#search').on('touchstart', function() {
+				var ipt = $('.ipt').val();
+				window.location.href = 'sjm-search.html?selectText=' + encodeURI(ipt);
 			})
-	
 		</script>
+		<!--<script type="text/javascript">
+			seajs.use(['index'],function  (app) {
+				app.init();   //必须加括号
+			})
+		</script>-->
 
 	</body>
 

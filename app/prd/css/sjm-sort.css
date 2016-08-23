@@ -339,11 +339,11 @@ section {
         display: inline-block;
         width: 7.625rem;
         height: 5.70833rem;
-        position: relative; }
+        position: relative;
+        overflow: hidden; }
         section .hot .container .swiper-wrapper .swiper-slide img {
           display: block;
-          width: 7.625rem;
-          height: 5.70833rem; }
+          width: 7.625rem; }
         section .hot .container .swiper-wrapper .swiper-slide span {
           display: inline-block;
           background: rgba(0, 0, 0, 0.4);
@@ -351,6 +351,7 @@ section {
           padding: 0.20833rem 0.41667rem;
           line-height: 1.41667rem;
           font-size: 0.91667rem;
+          white-space: nowrap;
           position: absolute;
           top: 50%;
           left: 50%;

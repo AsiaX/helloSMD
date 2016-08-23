@@ -1,0 +1,179 @@
+$base_color:deeppink;
+$yh:"微软雅黑","Microsoft yahei";
+@import "mobile";
+@import "myscroll";
+@import "../icons/iconfont.css";
+@import "swiper-3.3.1.min.css";
+body,html{
+    background:#f3eff0;
+}
+
+@mixin box ($box-sizing) {
+    -webkit-box-sizing:$box-sizing;
+    -moz-box-sizing:$box-sizing;
+    -ms-box-sizing:$box-sizing;
+    -o-box-sizing:$box-sizing;
+    box-sizing:$box-sizing;
+}
+
+header {
+    width: 100%;
+    height: pxToRem(88);
+    background: #ab0006;
+    border-bottom: #db909a;
+    text-align: center;
+    line-height: pxToRem(88); //  -webkit-box-flex: 1;
+    //  -webkit-box-flex-group: 1;
+    img {
+        display: inline-block;
+        height: pxToRem(60);
+        width: pxToRem(179);
+        margin: pxToRem(14) auto;
+    }
+    .head-icon {
+        font-size: pxToRem(40);
+        color: #fff;
+    }
+    .icon-xiaoxi {
+        float: left;
+        margin-left: pxToRem(27);
+    }
+    .icon-gouwuche {
+        float: right;
+        margin-right: pxToRem(27);
+    }
+}
+//滑动区域
+section {
+    width: 100%;
+    height: pxToRem(27); //  -webkit-box-flex-group: 2;
+    .sousuo-wrap {
+        width: 100%; //      background: #f2f2f2;
+        height: pxToRem(76);
+        padding: pxToRem(10) pxToRem(16);
+        @include box(border-box);
+        display: -webkit-box;
+        border-bottom: 1px solid #d9d9d9;
+        .sousuo-inner {
+            height: pxToRem(56); //          line-height:pxToRem(56);
+            background: #fff;
+            border-radius: 3px/4px;
+            -webkit-box-flex: 1;
+            -webkit-box-flex-group: 1;
+            padding: pxToRem(14) pxToRem(16);
+            @include box(border-box);
+            display: -webkit-box;
+            span {
+                display: block;
+                width: pxToRem(36);
+                height: pxToRem(28);
+                line-height: pxToRem(22);
+                -webkit-box-flex-group: 2;
+                font-size: pxToRem(36);
+                color: #e06464;
+            }
+            input {
+                display: block;
+                -webkit-box-flex: 1;
+                -webkit-box-flex-group: 1;
+                height: pxToRem(28);
+                border: none;
+                font-size: pxToRem(22);
+            }
+        }
+        .brand {
+            width: pxToRem(110);
+            height: pxToRem(56);
+            -webkit-box-flex-group: 2;
+            margin-left: pxToRem(12);
+            line-height: pxToRem(50);
+            background: #fff;
+            border-radius: 3px/4px;
+            border: 1px solid #ff5b82;
+            color: #ff5b82;
+            text-align: center;
+            @include box(border-box);
+            font-size: pxToRem(22);
+            font-family: $yh;
+            span:first-child {
+                font-size: pxToRem(30);
+            }
+        }
+    }
+}
+.noGoods{
+    color:deeppink;
+    font-size:pxToRem(40);
+    text-align:center;
+    width:100%;
+    padding:pxToRem(30) 0;
+}
+#thelist{
+    width:100%;
+    li{
+        width:100%;
+        height:pxToRem(220);
+        border-bottom:1px solid #707070;
+        background:#fefcfd;
+        dl{
+            width:100%;
+            @include box(border-box);
+            padding:pxToRem(20) pxToRem(50) pxToRem(26) pxToRem(15);
+            dt{
+                float:left;
+                margin-right:pxToRem(15);
+                img{
+                    width:pxToRem(174);
+                    height:pxToRem(174);
+                }
+            }
+            dd{
+                width:pxToRem(380);
+                float:left;
+                height:pxToRem(174);
+                position:relative;
+                h3{
+                    width:100%;
+                    font-size:pxToRem(30);
+                    color:#010101;
+                    height:pxToRem(80);
+                    line-height:pxToRem(40);
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                    display:-webkit-box;
+                    -webkit-line-clamp:2;
+                    -webkit-box-orient:vertical;
+                }
+                a{
+                    display:block;
+                    width:pxToRem(115);
+                    height:pxToRem(53);
+                    background:url('../img/addcar.png') 0 0 no-repeat;
+                    background-size:pxToRem(115) pxToRem(53);
+                    position:absolute;
+                    right:0;
+                    bottom:pxToRem(15);
+                }
+                div{
+                    margin-top:pxToRem(8);
+                    .price{
+                        color:#f62873;
+                        font-size:pxToRem(32);
+                    }
+                    .oldprice{
+                        color:#d7d5d6;
+                        font-size:pxToRem(20);
+                        text-decoration:line-through;
+                        margin-left:pxToRem(10);
+                    }
+                }
+                .discount{
+                    margin-top:pxToRem(22);
+                    margin-left:pxToRem(10);
+                    color:#010000;
+                    font-size:pxToRem(24);
+                }
+            }
+        }
+    }
+}
