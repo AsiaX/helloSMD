@@ -28,29 +28,6 @@
 				</div>
 			</div>
 
-			<!--<div class="searchDataBox">-->
-				<!--<ul id="thelist">-->
-					<!-- <li>
-				<dl>
-					<dt>
-						<img src="http://s18.mogucdn.com/p1/151021/11gcxq_ie4tqojzmvsgezrvgqzdambqgqyde_640x960.jpg_220x330.webp">
-					</dt>
-					<dd>
-						<h3>
-							2015韩国东大门女装秋冬季新款波点圆领长袖百搭卫衣波点波点波点
-						</h3>
-						<div>
-							<b class="price">￥90</b>
-							<span class="oldprice">￥150</span>
-						</div>
-						<span class="discount">6折</span>
-						<a href="#"></a>
-					</dd>
-				</dl>
-			</li> -->
-				<!--</ul>-->
-				<!--<p class="noGoods"></p>-->
-			<!--</div>-->
 			<div id="wrapper">
 				<ul class="list_goods">
 
@@ -73,7 +50,7 @@
 				if(selectText == 'undefined' || selectText == "") {
 					console.log(selectText);
 				} else {
-					$('.searchinp').val(selectText);
+					$('.ipt').val(selectText);
 					getSelectData(selectText);
 				}
 			}
@@ -88,6 +65,7 @@
 			})
 
 			function getSelectData(selectInp) {
+				$('.list_goods').html("")
 				var params = {
 					selectText: selectInp
 				}
@@ -104,36 +82,28 @@
 							return;
 						}
 						if(data.length) {
-//							$.each(data, function(i) {
-//								var oldPrice = parseInt(data[i].price * data[i].discount * 0.1);
-//								var oLi = $("<li><dl><dt><img src=" + data[i].goodsListImg + "></dt><dd><h3>" + data[i].goodsName + "</h3><div><b class='price'>￥" + oldPrice + "</b><span class='oldprice'>￥" + data[i].price + "</span></div><span class='discount'>" + data[i].discount + "折</span><a href='#'></a></dd></dl></li>")
-//								$('#thelist').append(oLi);
-//								$('.noGoods').hide();
-//							});
-//							
-				$.each(data, function(i) {
-					var li = $("<li class='single' id='" + data[i].goodsID + "'></li>");
-					var discount = Math.round(data[i].price * data[i].discount / 10);
-					if(discount == 0) {
-						discount = data[i].price;
-					}
-					var inner = "<a href='javascript:;' class='img_a'><img class='good_img' src='" +
-						data[i].goodsListImg + "' /></a><a href='###' class='text'>" +
-						data[i].goodsName + "</a><span class='price'>￥" +
-						data[i].price + "</span><span class='discount'>￥" + discount + "</span>"
-					li.html(inner);
-					li.appendTo($(".list_goods"));
-					$('.noGoods').hide();
-				})
-				//初始化iscroll
-				var myscr = new IScroll("#wrapper", {
-					
-				})
-				$(".list_goods").on("tap","li",function(){
-					window.location = "detail.html?id="+$(this).prop("id");
-				})
-				
-				
+							$.each(data, function(i) {
+									var li = $("<li class='single' id='" + data[i].goodsID + "'></li>");
+									var discount = Math.round(data[i].price * data[i].discount / 10);
+									if(discount == 0) {
+										discount = data[i].price;
+									}
+									var inner = "<a href='javascript:;' class='img_a'><img class='good_img' src='" +
+										data[i].goodsListImg + "' /></a><a href='###' class='text'>" +
+										data[i].goodsName + "</a><span class='price'>￥" +
+										data[i].price + "</span><span class='discount'>￥" + discount + "</span>"
+									li.html(inner);
+									li.appendTo($(".list_goods"));
+									$('.noGoods').hide();
+								})
+								//初始化iscroll
+							var myscr = new IScroll("#wrapper", {
+
+							})
+							$(".list_goods").on("tap", "li", function() {
+								window.location = "detail.html?id=" + $(this).prop("id");
+							})
+
 						} else {
 							$('.noGoods').show().text('没有搜索到相关商品!');
 						}

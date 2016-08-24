@@ -21,7 +21,7 @@
 				<div class="sousuo-inner">
 
 					<span class="iconfont icon-fangdajing"></span>
-					<input type="text" placeholder="请输入商品名称或品牌名称" class="ipt"/>
+					<input type="text" placeholder="请输入商品名称或品牌名称" class="ipt" />
 				</div>
 				<div class="brand" id="search">
 					<span class="iconfont icon-fenlei"></span>
@@ -50,7 +50,7 @@
 					<li class="sjm-rec">
 						<img src="../img/sjm-rec.png" />
 						<p class="top">玩转女人味</p>
-						<p class="bottom">鞋子配饰</span>
+						<p class="bottom">牛仔裤</span>
 					</li>
 					<!--<li class="sjm-rec">
 						<img src="../img/sjm-rec.png" />
@@ -74,12 +74,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="girl">
+			<!--<div class="girl">
 				<p class="text">
 					<img src="../img/sjm-girl.png" alt="" />
 				</p>
-				<ul class="list">
-					<!--<li><img src="../img/sjm-rec.png" />
+				<ul class="list">-->
+			<!--<li><img src="../img/sjm-rec.png" />
 						<p>上衣</p>
 					</li>
 					<li><img src="../img/sjm-rec.png" />
@@ -104,13 +104,14 @@
 						<p>上衣</p>
 					</li>
 -->
-				</ul>
-			</div>
+			<!--</ul>
+			</div>-->
 
 		</section>
 		<footer>111</footer>
 		<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/iscroll.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			// 获取 商品列表信息 
 			getGoodsData();
@@ -125,25 +126,36 @@
 				//		pageCode:thisPageCode,
 				//		linenumber:thisLineNumber
 				//	}
-				var arr = ["人气百搭", "简约时尚", '气质正装', '优雅知性', '暖冬必备', '酷黑时尚', '早秋风尚', '甜美色调',"时髦配饰",'阳光暖男']
+				var arr = ["人气百搭", "简约时尚", '气质正装', '优雅知性', '暖冬必备', '酷黑时尚', '早秋风尚', '甜美色调', "时髦配饰", '阳光暖男']
+					//				var arr2=[""]
 				$.ajax({
 					url: 'http://datainfo.duapp.com/shopdata/getGoods.php',
 					type: 'get',
 					//		data:params,
 					dataType: 'jsonp',
 					success: function(data) {
-						console.log(data.length);
+						//						console.log(data.length);
 						if(data.length) {
 							for(var i = 0; i <= 4; i++) {
 								var oLi = $("<li class='sjm-rec'><img src='" + data[i].goodsListImg + "'/><p class='top'>" + arr[i] + "</p><p class='bottom'>" + data[i].className + "</p></li>")
 								$('.recommend .recommend-wrap').append(oLi);
 
 							}
+							//点击进入此类
+							$('.recommend .recommend-wrap').on('click', '.sjm-rec', function() {
+								var n = $(this).children(".bottom").text();
+
+								console.log(n)
+								window.location.href = 'sjm-search.html?selectText=' + encodeURI(n);
+								
+								enterThisSelect()
+
+							})
 							$.each(data, function(i) {
-								if(i>4){
-									var div0 = "<div class='swiper-slide'><img src='" + data[i].goodsListImg + "' /><span>"+arr[i]+"</span></div>"
+								if(i > 4) {
+									var div0 = "<div class='swiper-slide'><img src='" + data[i].goodsListImg + "' /><span>" + arr[i] + "</span></div>"
 									$(".hot .container .wrapper").append(div0);
-									
+
 								}
 							});
 							var myswiper = new Swiper('.container', {
@@ -153,6 +165,7 @@
 								resistanceRatio: 0,
 							})
 						}
+
 					}
 				})
 			}
@@ -162,6 +175,34 @@
 				var ipt = $('.ipt').val();
 				window.location.href = 'sjm-search.html?selectText=' + encodeURI(ipt);
 			})
+
+			function enterThisSelect() {
+
+				$.ajax({
+					url: 'http://datainfo.duapp.com/shopdata/selectGoodes.php',
+					type: 'get',
+					data: n,
+					dataType: "jsonp",
+					success: function(data) {
+						console.log(data);
+						$('#thelist').html("");
+						if(data.length) {
+							var li = $("<li class='single' id='" + data[i].goodsID + "'></li>");
+							var discount = Math.round(data[i].price * data[i].discount / 10);
+							if(discount == 0) {
+								discount = data[i].price;
+							}
+							var inner = "<a href='javascript:;' class='img_a'><img class='good_img' src='" +
+								data[i].goodsListImg + "' /></a><a href='###' class='text'>" +
+								data[i].goodsName + "</a><span class='price'>￥" +
+								data[i].price + "</span><span class='discount'>￥" + discount + "</span>"
+							li.html(inner);
+							li.appendTo($(".list_goods"));
+						}
+
+					}
+				})
+			}
 		</script>
 		<!--<script type="text/javascript">
 			seajs.use(['index'],function  (app) {
